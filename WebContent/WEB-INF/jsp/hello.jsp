@@ -26,7 +26,9 @@
 		</s:link> |
 		<s:link beanclass="stripesbook.action.HelloActionBean"
 			event="randomDate">Show a random date and time
-		</s:link>
+		</s:link> |
+		<s:link beanclass="stripesbook.action.HelloActionBean"
+			event="data">Show json</s:link>
 	</p>
 </body>
 </html>

@@ -1,7 +1,10 @@
 package stripesbook.action;
 
 import java.util.*;
+
 import net.sourceforge.stripes.action.*;
+import net.sourceforge.stripes.ajax.JavaScriptResolution;
+import model.Person;
 
 public class HelloActionBean implements ActionBean {
 	private ActionBeanContext ctx;
@@ -34,5 +37,13 @@ public class HelloActionBean implements ActionBean {
 		long random = new Random().nextLong() % max;
 		date = new Date(random);
 		return new ForwardResolution(VIEW);
+	}
+	
+	public Resolution data() {
+		Person p = new Person();
+		p.setName("Ben");
+		p.setAge(5);
+		
+		return new JavaScriptResolution(p);
 	}
 }
