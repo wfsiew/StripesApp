@@ -4,11 +4,15 @@
 	title="Contact List">
 	<s:layout-component name="body">
 		<s:messages/>
+		<s:link beanclass="stripesbook.action.ContactFormActionBean">
+			Create a New Contact
+		</s:link>
 		<table>
 			<tr>
 				<th>First name</th>
 				<th>Last name</th>
 				<th>Email</th>
+				<th></th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -22,7 +26,13 @@
 							event="view">
 							<s:param name="contactId" value="${contact.id}" />
 							View
-						</s:link> |
+						</s:link>
+					</td>
+					<td>
+						<s:link beanclass="stripesbook.action.ContactFormActionBean">
+							<s:param name="contactId" value="${contact.id}" />
+							Update
+						</s:link>
 					</td>
 					<td>
 						<s:link beanclass="stripesbook.action.ContactListActionBean"
